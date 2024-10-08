@@ -253,6 +253,8 @@ template <typename T>
 bool AVLTree<T>::search(AVLNode<T> *node, T key)
 {
     // COMPLETE HERE
+    if (node == nullptr)
+        return false;
     if (node->data == key)
         return true;
     if (node->data > key)
@@ -367,7 +369,7 @@ bool AVLTree<T>::isBalanced()
     if (root->left != nullptr)
         left = root->left->height;
     if (root->right != nullptr)
-        left = root->right->height;
+        right = root->right->height;
     return std::abs(left - right) < 2;
 }
 
